@@ -1,0 +1,9 @@
+<div *ngIf="user; else notloggedin">
+  <img src="{{ user?.photoUrl }}">
+  <h4>{{ user?.name }}</h4>
+  <p>{{ user?.email }}</p>
+  <button (click)="signOut()">Logout</button>
+</div>
+<ng-template #notloggedin>
+  <button (click)="signInWithGoogle()">Login</button>
+</ng-template>
